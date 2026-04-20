@@ -7,6 +7,9 @@
   <meta name="description" content="Politique de confidentialité et traitement des données personnelles de la MAM Les P'tits Cocoons à La Ferrière, Vendée." />
   <meta name="robots" content="noindex, follow" />
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png" />
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,8 +53,15 @@
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Voir le logo" class="logo-img logo-clickable" id="logoTrigger" style="cursor:zoom-in;" />
         <span class="logo-text">Les P'tits Cocoons</span>
       </a>
+      <div class="logo-modal" id="logoModal">
+        <div class="logo-modal-inner">
+          <button class="logo-modal-close" id="logoModalClose" aria-label="Fermer">&#x2715;</button>
+          <img src="images/logo.png" alt="MAM Les P'tits Cocoons" />
+        </div>
+      </div>
       <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
         <span></span>
         <span></span>
@@ -160,6 +170,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="footer-logo">
+            <img src="images/logo.png" alt="" class="logo-img logo-img--footer" />
             <span class="logo-text">Les P'tits Cocoons</span>
           </div>
           <p class="footer-tagline">Une MAM chaleureuse où chaque enfant s'épanouit à son rythme.</p>

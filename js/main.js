@@ -344,4 +344,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach(section => navObserver.observe(section));
 
+
+  /* =============================================
+     7. LOGO LIGHTBOX
+     ============================================= */
+  const logoTrigger   = document.getElementById('logoTrigger');
+  const logoModal     = document.getElementById('logoModal');
+  const logoModalClose = document.getElementById('logoModalClose');
+
+  if (logoTrigger && logoModal) {
+    logoTrigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      logoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+
+    logoModalClose.addEventListener('click', () => {
+      logoModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    logoModal.addEventListener('click', (e) => {
+      if (e.target === logoModal) {
+        logoModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && logoModal.classList.contains('active')) {
+        logoModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
 });
