@@ -308,7 +308,6 @@ strong { color: var(--color-text); font-weight: 700; }
 
 .navbar.scrolled .logo-img {
   box-shadow: 0 0 0 2px var(--color-sage);
-  filter: brightness(0) saturate(100%) invert(47%) sepia(22%) saturate(498%) hue-rotate(72deg) brightness(95%);
 }
 
 .logo-img--footer {
