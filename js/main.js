@@ -229,7 +229,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!nameOk || !emailOk || !messageOk) return;
 
-      // Build mailto link
+      // Clé Web3Forms — à remplacer par ta clé personnelle (voir instructions)
+      const WEB3FORMS_KEY = '451594ea-6b61-419c-a23a-9f130bbd76ef';
+
       const name    = nameInput.value.trim();
       const email   = emailInput.value.trim();
       const phone   = document.getElementById('phone').value.trim();
@@ -245,29 +247,51 @@ document.addEventListener('DOMContentLoaded', () => {
         '2-3-ans': '2 à 3 ans'
       };
 
-      const body = [
+      const corps = [
         `Nom : ${name}`,
         `Email : ${email}`,
-        phone    ? `Téléphone : ${phone}` : '',
-        age      ? `Âge de l'enfant : ${ageLabels[age] || age}` : '',
-        date     ? `Date souhaitée : ${formatDate(date)}` : '',
+        phone ? `Téléphone : ${phone}` : '',
+        age   ? `Âge de l'enfant : ${ageLabels[age] || age}` : '',
+        date  ? `Date souhaitée : ${formatDate(date)}` : '',
         '',
-        `Message :`,
+        'Message :',
         message
       ].filter(Boolean).join('\n');
 
-      const subject = encodeURIComponent(`Demande de contact - MAM Les P'tits Cocoons - ${name}`);
-      const bodyEncoded = encodeURIComponent(body);
-      const mailtoUrl = `mailto:mam.lesptitscocoons@gmail.com?subject=${subject}&body=${bodyEncoded}`;
+      const submitBtn = form.querySelector('[type="submit"]');
+      const labelOriginal = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Envoi en cours…';
 
-      window.location.href = mailtoUrl;
-
-      // Show success message after a short delay
-      setTimeout(() => {
-        formSuccess.classList.add('show');
-        form.reset();
-        setTimeout(() => formSuccess.classList.remove('show'), 6000);
-      }, 300);
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: `Demande de contact - MAM Les P'tits Cocoons - ${name}`,
+          from_name: "Site MAM Les P'tits Cocoons",
+          replyto: email,
+          cc: 'hugo.beignon@gmail.com',
+          message: corps
+        })
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.success) {
+          formSuccess.classList.add('show');
+          form.reset();
+          setTimeout(() => formSuccess.classList.remove('show'), 6000);
+        } else {
+          alert("Une erreur est survenue. Veuillez réessayer ou nous contacter directement : mam.lesptitscocoons@gmail.com");
+        }
+      })
+      .catch(() => {
+        alert("Une erreur est survenue. Veuillez réessayer ou nous contacter directement : mam.lesptitscocoons@gmail.com");
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = labelOriginal;
+      });
     });
   }
 
