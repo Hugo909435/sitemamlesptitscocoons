@@ -24,18 +24,6 @@ $pages = [
         'changefreq' => 'weekly',
         'priority'   => '1.0',
     ],
-    [
-        'loc'        => SITE_URL . '/mentions-legales.html',
-        'file'       => __DIR__ . '/mentions-legales.html',
-        'changefreq' => 'yearly',
-        'priority'   => '0.5',
-    ],
-    [
-        'loc'        => SITE_URL . '/politique-confidentialite.html',
-        'file'       => __DIR__ . '/politique-confidentialite.html',
-        'changefreq' => 'yearly',
-        'priority'   => '0.5',
-    ],
 ];
 
 /* ── Génération XML ── */
