@@ -33,6 +33,10 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # www → non-www (canonicalisation)
+  RewriteCond %{HTTP_HOST} ^www\.mamlesptitscocoons\.com [NC]
+  RewriteRule ^(.*)$ https://mamlesptitscocoons.com/$1 [L,R=301]
+
   # Sitemap dynamique : /sitemap.xml → sitemap.php (URL inchangée)
   RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
