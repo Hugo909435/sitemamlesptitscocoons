@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
           subject: `Demande de contact - MAM Les P'tits Cocoons - ${name}`,
           from_name: "Site MAM Les P'tits Cocoons",
           replyto: email,
-          cc: 'hugo.beignon@gmail.com',
+          cc: 'mam.lesptitscocoons@gmail.com',
           message: corps
         })
       })
