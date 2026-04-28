@@ -39,8 +39,9 @@
   # Bloquer l'accès direct au cache interne
   RewriteRule ^\.sitemap_cache\.xml$ - [F,L]
 
-  # Forcer HTTPS
+  # Forcer HTTPS (compatible Hostinger / proxy)
   RewriteCond %{HTTPS} off
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
 
