@@ -28,10 +28,24 @@
 </IfModule>
 
 # =============================================
-# Forcer HTTPS
+# Réécriture d'URL & HTTPS
 # =============================================
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
+  # Sitemap dynamique : /sitemap.xml → sitemap.php (URL inchangée)
+  RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+  # Bloquer l'accès direct au cache interne
+  RewriteRule ^\.sitemap_cache\.xml$ - [F,L]
+
+  # Forcer HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 </IfModule>
+
+# Bloquer l'accès direct au cache (fallback sans mod_rewrite)
+<Files ".sitemap_cache.xml">
+  Order Allow,Deny
+  Deny from all
+</Files>

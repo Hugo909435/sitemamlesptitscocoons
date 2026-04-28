@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /tarteaucitron.js-1.32.0/
+
+Sitemap: https://mamlesptitscocoons.com/sitemap.xml

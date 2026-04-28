@@ -916,6 +916,102 @@ strong { color: var(--color-text); font-weight: 700; }
 }
 
 /* =============================================
+   EQUIPE
+   ============================================= */
+.equipe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.equipe-card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.equipe-photo {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.equipe-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.equipe-card:hover .equipe-photo img {
+  transform: scale(1.04);
+}
+
+.equipe-info {
+  padding: 28px 32px 36px;
+}
+
+.equipe-info h3 {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.equipe-role {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-sage);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 14px;
+}
+
+.equipe-info p {
+  color: var(--color-text-light);
+  line-height: 1.75;
+}
+
+.equipe-duo {
+  text-align: center;
+}
+
+.equipe-duo-photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  max-width: 760px;
+  margin: 0 auto 16px;
+}
+
+.equipe-duo-photo img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+}
+
+.equipe-duo-caption {
+  font-style: italic;
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+  .equipe-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .equipe-duo-photo img {
+    height: 260px;
+  }
+}
+
+/* =============================================
    CONTACT
    ============================================= */
 .contact-wrapper {
