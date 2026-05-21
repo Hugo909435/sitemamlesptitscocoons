@@ -1350,6 +1350,85 @@ strong { color: var(--color-text); font-weight: 700; }
 
 .legal-content a:hover { color: var(--color-sage); }
 
+/* Editorial Hover */
+.editorial-wrapper {
+  position: relative;
+  display: inline-block;
+  color: var(--color-sage-dark);
+  font-weight: 700;
+  cursor: help;
+  border-bottom: 1px dotted var(--color-sage-dark);
+}
+
+.editorial-tooltip {
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%; /* Positioned directly above */
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px); /* Add some space via transform instead of bottom */
+  background-color: var(--color-text);
+  color: #fff;
+  text-align: center;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 140px;
+  box-shadow: var(--shadow-lg);
+  pointer-events: none;
+}
+
+/* Add an invisible bridge to keep the tooltip open */
+.editorial-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  display: none;
+}
+
+.editorial-wrapper:hover::after {
+  display: block;
+}
+
+.editorial-wrapper:hover .editorial-tooltip {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+  pointer-events: auto;
+}
+
+.editorial-tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--color-text) transparent transparent transparent;
+}
+
+.editorial-tooltip a {
+  color: var(--color-beige-light) !important;
+  font-size: 0.9rem;
+  text-decoration: none !important;
+  font-weight: 600;
+  display: block;
+  transition: var(--transition);
+}
+
+.editorial-tooltip a:hover {
+  color: var(--color-white) !important;
+  transform: translateX(3px);
+}
+
 .legal-back {
   display: flex;
   gap: 16px;
@@ -1489,7 +1568,44 @@ strong { color: var(--color-text); font-weight: 700; }
   transform: none !important;
 }
 
-/* Petit icône cookie en bas à droite */
+#tarteaucitronRoot #tarteaucitronIcon {
+  background-color: var(--color-sage) !important;
+  border-radius: 50% !important;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+  transition: transform 0.3s ease !important;
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+  z-index: 2147483647 !important;
+}
+
+#tarteaucitronRoot #tarteaucitronIcon:hover {
+  transform: scale(1.1) !important;
+}
+
+#tarteaucitronRoot #tarteaucitronIcon #tarteaucitronManager {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+}
+
+#tarteaucitronRoot #tarteaucitronCookieEmoji {
+  font-size: 28px !important;
+  line-height: 1 !important;
+}
+
+/* Petit icône cookie en bas à droite (ancien style à nettoyer si besoin) */
 #tarteaucitronRoot #tarteaucitronAlertSmall {
   background-color: var(--color-sage) !important;
   border-radius: 50px !important;
