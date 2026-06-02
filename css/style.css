@@ -235,6 +235,14 @@ strong { color: var(--color-text); font-weight: 700; }
   transition: var(--transition);
 }
 
+.nav-logo img {
+  height: 54px;
+  width: auto;
+  display: block;
+  mix-blend-mode: multiply;
+  transition: var(--transition);
+}
+
 .navbar.scrolled .nav-logo { color: var(--color-text); }
 
 .logo-icon {
@@ -1162,6 +1170,14 @@ strong { color: var(--color-text); font-weight: 700; }
   font-size: 1.3rem;
   color: var(--color-white);
   margin-bottom: 16px;
+}
+
+.footer-logo img {
+  height: 90px;
+  width: auto;
+  display: block;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
 }
 
 .footer-tagline {
