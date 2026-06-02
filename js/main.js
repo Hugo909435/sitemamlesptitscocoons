@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Build images array from gallery
   galleryItems.forEach((item, i) => {
     const img = item.querySelector('img');
-    images.push({ src: img.src, alt: img.alt });
+    images.push({ src: img.dataset.full || img.src, alt: img.alt });
 
     item.addEventListener('click', () => {
       openLightbox(i);
