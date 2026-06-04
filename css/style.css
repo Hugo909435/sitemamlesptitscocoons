@@ -436,10 +436,24 @@ strong { color: var(--color-text); font-weight: 700; }
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #8A9E7A 0%, #C4A882 100%);
-  background-image: url('../images/greyerbaby-baby-390555_1920.jpg');
+  background-image: url('../images/hero-mobile.jpg');
+  background-image: image-set(
+    url('../images/hero-mobile.webp') type("image/webp"),
+    url('../images/hero-mobile.jpg') type("image/jpeg")
+  );
   background-size: cover;
   background-position: center;
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    background-image: url('../images/hero-desktop.jpg');
+    background-image: image-set(
+      url('../images/hero-desktop.webp') type("image/webp"),
+      url('../images/hero-desktop.jpg') type("image/jpeg")
+    );
+  }
 }
 
 .hero-overlay {
@@ -1289,11 +1303,25 @@ strong { color: var(--color-text); font-weight: 700; }
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #8A9E7A 0%, #C4A882 100%);
-  background-image: url('../images/greyerbaby-baby-390555_1920.jpg');
+  background-image: url('../images/hero-mobile.jpg');
+  background-image: image-set(
+    url('../images/hero-mobile.webp') type("image/webp"),
+    url('../images/hero-mobile.jpg') type("image/jpeg")
+  );
   background-size: cover;
   background-position: center;
   overflow: hidden;
   padding-top: var(--nav-height);
+}
+
+@media (min-width: 768px) {
+  .page-hero {
+    background-image: url('../images/hero-desktop.jpg');
+    background-image: image-set(
+      url('../images/hero-desktop.webp') type("image/webp"),
+      url('../images/hero-desktop.jpg') type("image/jpeg")
+    );
+  }
 }
 
 .page-hero-overlay {
@@ -2147,4 +2175,25 @@ strong { color: var(--color-text); font-weight: 700; }
   .contact-form { padding: 24px 16px; }
 
   .infos-card { padding: 28px 20px; }
+}
+
+@media (max-width: 768px) {
+  .lightbox-prev,
+  .lightbox-next {
+    top: auto;
+    bottom: 24px;
+    transform: none;
+  }
+
+  .lightbox-prev { left: calc(50% - 64px); }
+  .lightbox-next { left: calc(50% + 12px); }
+
+  .lightbox-prev:hover,
+  .lightbox-next:hover {
+    transform: scale(1.1);
+  }
+
+  .lightbox-content img {
+    max-height: 75vh;
+  }
 }

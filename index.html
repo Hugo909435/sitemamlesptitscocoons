@@ -33,10 +33,15 @@
   <link rel="shortcut icon" href="images/logo.png" />
   <link rel="apple-touch-icon" href="images/logo.png" />
 
-  <!-- Google Fonts -->
+  <!-- Préchargement hero (améliore le LCP) -->
+  <link rel="preload" as="image" href="images/hero-mobile.webp" type="image/webp" media="(max-width: 767px)" />
+  <link rel="preload" as="image" href="images/hero-desktop.webp" type="image/webp" media="(min-width: 768px)" />
+
+  <!-- Google Fonts — non bloquant -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
 
   <!-- Schema.org JSON-LD -->
   <script type="application/ld+json">
@@ -62,39 +67,11 @@
   <link rel="icon" type="image/png" href="images/Logo.png" />
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Tarteaucitron - Gestion des cookies RGPD -->
-  <link rel="stylesheet" href="css/tarteaucitron-custom.css" />
-  <script src="tarteaucitron.js-1.32.0/tarteaucitron.js"></script>
-  <script>
-  tarteaucitron.init({
-      "privacyUrl": "politique-confidentialite.html",
-      "bodyPosition": "bottom",
-      "hashtag": "#tarteaucitron",
-      "cookieName": "tarteaucitron",
-      "orientation": "bottom",
-      "groupServices": false,
-      "showDetailsOnClick": true,
-      "serviceDefaultState": "wait",
-      "showAlertSmall": false,
-      "cookieslist": false,
-      "showIcon": true,
-      "iconPosition": "BottomRight",
-      "adblocker": false,
-      "DenyAllCta": true,
-      "AcceptAllCta": true,
-      "highPrivacy": true,
-      "handleBrowserDNTRequest": false,
-      "removeCredit": false,
-      "moreInfoLink": true,
-      "useExternalCss": false,
-      "useExternalJs": false,
-      "mandatory": true,
-      "mandatoryCta": true
-  });
-  (tarteaucitron.job = tarteaucitron.job || []).push('googlemapsembed');
-  tarteaucitron.user.gtagUa = 'G-DMDK07HP2M';
-  (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
-  </script>
+  <!-- Tarteaucitron - Gestion des cookies RGPD — non bloquant -->
+  <link rel="preload" href="css/tarteaucitron-custom.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="css/tarteaucitron-custom.css" /></noscript>
+  <script src="tarteaucitron.js-1.32.0/tarteaucitron.js" defer></script>
+  <script src="js/tarteaucitron-init.js" defer></script>
 </head>
 <body>
 
@@ -166,7 +143,7 @@
           </div>
         </div>
         <div class="presentation-image animate-up">
-          <img src="images/images_mam/image00001.jpeg" alt="Photo MAM Les P'tits Cocoons" loading="lazy" />
+          <img src="images/images_mam/image00001.webp" alt="Photo MAM Les P'tits Cocoons" loading="lazy" />
         </div>
       </div>
 
@@ -324,83 +301,83 @@
       </div>
       <div class="gallery-grid" id="galleryGrid">
         <div class="gallery-item animate-up" data-index="0">
-          <img src="images/images_mam_thumb/image00002.jpeg" data-full="images/images_mam/image00002.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00002.webp" data-full="images/images_mam/image00002.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="1">
-          <img src="images/images_mam_thumb/image00003.jpeg" data-full="images/images_mam/image00003.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00003.webp" data-full="images/images_mam/image00003.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="2">
-          <img src="images/images_mam_thumb/image00004.jpeg" data-full="images/images_mam/image00004.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00004.webp" data-full="images/images_mam/image00004.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="3">
-          <img src="images/images_mam_thumb/image00005.jpeg" data-full="images/images_mam/image00005.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00005.webp" data-full="images/images_mam/image00005.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="4">
-          <img src="images/images_mam_thumb/image00006.jpeg" data-full="images/images_mam/image00006.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00006.webp" data-full="images/images_mam/image00006.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="5">
-          <img src="images/images_mam_thumb/image00007.jpeg" data-full="images/images_mam/image00007.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00007.webp" data-full="images/images_mam/image00007.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="6">
-          <img src="images/images_mam_thumb/image00008.jpeg" data-full="images/images_mam/image00008.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00008.webp" data-full="images/images_mam/image00008.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="7">
-          <img src="images/images_mam_thumb/image00009.jpeg" data-full="images/images_mam/image00009.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00009.webp" data-full="images/images_mam/image00009.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="8">
-          <img src="images/images_mam_thumb/image00010.jpeg" data-full="images/images_mam/image00010.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00010.webp" data-full="images/images_mam/image00010.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="9">
-          <img src="images/images_mam_thumb/image00011.jpeg" data-full="images/images_mam/image00011.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00011.webp" data-full="images/images_mam/image00011.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="10">
-          <img src="images/images_mam_thumb/image00012.jpeg" data-full="images/images_mam/image00012.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00012.webp" data-full="images/images_mam/image00012.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="11">
-          <img src="images/images_mam_thumb/image00013.jpeg" data-full="images/images_mam/image00013.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00013.webp" data-full="images/images_mam/image00013.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="12">
-          <img src="images/images_mam_thumb/image00014.jpeg" data-full="images/images_mam/image00014.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00014.webp" data-full="images/images_mam/image00014.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="13">
-          <img src="images/images_mam_thumb/image00015.jpeg" data-full="images/images_mam/image00015.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00015.webp" data-full="images/images_mam/image00015.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="14">
-          <img src="images/images_mam_thumb/image00016.jpeg" data-full="images/images_mam/image00016.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00016.webp" data-full="images/images_mam/image00016.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="15">
-          <img src="images/images_mam_thumb/image00017.jpeg" data-full="images/images_mam/image00017.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00017.webp" data-full="images/images_mam/image00017.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="16">
-          <img src="images/images_mam_thumb/image00018.jpeg" data-full="images/images_mam/image00018.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00018.webp" data-full="images/images_mam/image00018.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="17">
-          <img src="images/images_mam_thumb/image00019.jpeg" data-full="images/images_mam/image00019.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00019.webp" data-full="images/images_mam/image00019.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="18">
-          <img src="images/images_mam_thumb/image00020.jpeg" data-full="images/images_mam/image00020.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00020.webp" data-full="images/images_mam/image00020.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
         <div class="gallery-item animate-up" data-index="19">
-          <img src="images/images_mam_thumb/image00021.jpeg" data-full="images/images_mam/image00021.jpeg" alt="" loading="lazy" />
+          <img src="images/images_mam_thumb/image00021.webp" data-full="images/images_mam/image00021.webp" alt="" loading="lazy" />
           <div class="gallery-overlay"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" viewBox="0 0 24 24" stroke="white" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803 7.5 7.5 0 0015.803 15.803zM10.5 7.5v6m3-3h-6"/></svg></div>
         </div>
       </div>
@@ -605,6 +582,6 @@
     </div>
   </div>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
